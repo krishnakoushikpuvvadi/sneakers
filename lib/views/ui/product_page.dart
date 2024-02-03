@@ -29,6 +29,7 @@ class _ProductPageState extends State<ProductPage> {
     getFavorites();
   }
 
+
   getFavorites() {
     var favoritesNotifier =
         Provider.of<FavoritesNotifier>(context, listen: false);

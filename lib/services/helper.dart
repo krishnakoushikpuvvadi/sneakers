@@ -15,6 +15,7 @@ class Helper {
       final maleList = sneakersFromJson(response.body);
       var male =
           maleList.where((element) => element.category == "Men's Running");
+      // print(maleList);
       return male.toList();
     } else {
       throw Exception("Failed get sneakers list");
@@ -63,6 +64,27 @@ class Helper {
       throw Exception("Failed get sneakers list");
     }
   }
+  // Future<List<Sneakers>> getMaleSneakers() async {
+  //   final data =
+  //       await the_bundle.rootBundle.loadString("assets/json/men_shoes.json");
+  //   final maleList = sneakersFromJson(data);
+
+  //   return maleList;
+  // }
+  // Future<List<Sneakers>> getFemaleSneakers() async {
+  //   final data =
+  //       await the_bundle.rootBundle.loadString("assets/json/women_shoes.json");
+  //   final maleList = sneakersFromJson(data);
+
+  //   return maleList;
+  // }
+  // Future<List<Sneakers>> getkidsSneakers() async {
+  //   final data =
+  //       await the_bundle.rootBundle.loadString("assets/json/kids_shoes.json");
+  //   final maleList = sneakersFromJson(data);
+
+  //   return maleList;
+  // }
 
   //Single Male
   Future<Sneakers> getMaleSneakersById(String id) async {
@@ -83,7 +105,7 @@ class Helper {
     return sneaker;
   }
 
-  Future<Sneakers> geKidsSneakersById(String id) async {
+  Future<Sneakers> getKidsSneakersById(String id) async {
     final data =
         await the_bundle.rootBundle.loadString("assets/json/kids_shoes.json");
     final maleList = sneakersFromJson(data);

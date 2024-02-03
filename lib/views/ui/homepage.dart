@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:online_shop/controllers/login_provider.dart';
 import 'package:online_shop/views/shared/export.dart';
 import 'package:online_shop/views/shared/export_packages.dart';
@@ -15,17 +17,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       TabController(length: 3, vsync: this);
 
   @override
-  Widget build(BuildContext context) {
-    var productNotifier = Provider.of<ProductNotifier>(context);
+  void initState() {
+    super.initState();
+
+    // Fetch data only once when the widget is created
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    var productNotifier = Provider.of<ProductNotifier>(context, listen: false);
+    var favoritesNotifier =
+        Provider.of<FavoritesNotifier>(context, listen: false);
+    var authNotifier = Provider.of<LoginNotifier>(context, listen: false);
+
     productNotifier.getFemale();
     productNotifier.getMale();
     productNotifier.getkids();
 
-    var favoritesNotifier = Provider.of<FavoritesNotifier>(context);
-    favoritesNotifier.getFavorites();
+    await favoritesNotifier.getFavorites();
+    await authNotifier.getPrefs();
+  }
 
-    var authNotifier = Provider.of<LoginNotifier>(context);
-    authNotifier.getPrefs();
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
@@ -87,15 +101,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 padding: const EdgeInsets.only(left: 12),
                 child: TabBarView(controller: _tabController, children: [
                   HomeWidget(
-                    male: productNotifier.male,
+                    male: Provider.of<ProductNotifier>(context).male,
                     tabIndex: 0,
                   ),
                   HomeWidget(
-                    male: productNotifier.female,
+                    male: Provider.of<ProductNotifier>(context).female,
                     tabIndex: 1,
                   ),
                   HomeWidget(
-                    male: productNotifier.kids,
+                    male: Provider.of<ProductNotifier>(context).kids,
                     tabIndex: 2,
                   ),
                 ]),

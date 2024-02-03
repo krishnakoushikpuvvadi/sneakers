@@ -7,7 +7,6 @@ import 'package:online_shop/controllers/login_provider.dart';
 import 'package:online_shop/controllers/mainscreen_provider.dart';
 import 'package:online_shop/controllers/product_provider.dart';
 import 'package:online_shop/views/ui/mainscreen.dart';
-import 'package:online_shop/views/ui/product_page.dart';
 import 'package:provider/provider.dart';
 
 // entrypoint of the app

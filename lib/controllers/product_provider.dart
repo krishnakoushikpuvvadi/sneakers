@@ -44,7 +44,7 @@ class ProductNotifier extends ChangeNotifier {
     } else if (category == "Women's Running") {
       sneaker = Helper().getFemaleSneakersById(id);
     } else {
-      sneaker = Helper().geKidsSneakersById(id);
+      sneaker = Helper().getKidsSneakersById(id);
     }
   }
 
