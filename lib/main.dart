@@ -5,6 +5,7 @@ import 'package:online_shop/controllers/cart_provider.dart';
 import 'package:online_shop/controllers/favorites_provider.dart';
 import 'package:online_shop/controllers/login_provider.dart';
 import 'package:online_shop/controllers/mainscreen_provider.dart';
+import 'package:online_shop/controllers/payment_controller.dart';
 import 'package:online_shop/controllers/product_provider.dart';
 import 'package:online_shop/views/ui/mainscreen.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ void main() async {
     ChangeNotifierProvider(create: (context) => CartProvider()),
     ChangeNotifierProvider(create: (context) => FavoritesNotifier()),
     ChangeNotifierProvider(create: (context) => LoginNotifier()),
+    ChangeNotifierProvider(create: (context) => PaymentNotifier()),
   ], child: const MyApp()));
 }
 

@@ -29,7 +29,6 @@ class _ProductPageState extends State<ProductPage> {
     getFavorites();
   }
 
-
   getFavorites() {
     var favoritesNotifier =
         Provider.of<FavoritesNotifier>(context, listen: false);
@@ -89,6 +88,11 @@ class _ProductPageState extends State<ProductPage> {
                                 "category": widget.sneakers.category,
                                 "price": widget.sneakers.price,
                                 "imageUrl": widget.sneakers.imageUrl[0],
+                              });
+
+                              setState(() {
+                                const Icon(AntDesign.heart,
+                                    color: Colors.black);
                               });
                             }
                           } else {

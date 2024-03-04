@@ -11,6 +11,7 @@ import 'package:online_shop/views/ui/auth/login.dart';
 import 'package:online_shop/views/ui/cartpage.dart';
 import 'package:online_shop/views/ui/favorites.dart';
 import 'package:online_shop/views/ui/nonuser.dart';
+import 'package:online_shop/views/ui/orders/orders.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -181,7 +182,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const LoginPage()));
+                                              const ProcessOrders()));
                                 },
                                 title: " My Orders",
                                 leading:
