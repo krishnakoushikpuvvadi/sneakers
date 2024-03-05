@@ -77,7 +77,7 @@ class _ProcessOrdersState extends State<ProcessOrders> {
                             return Container(
                               margin: const EdgeInsets.all(8),
                               padding: const EdgeInsets.all(8),
-                              height: 78.h,
+                              height: 80.h,
                               decoration: const BoxDecoration(
                                 color: Colors.black12,
                                 borderRadius:
@@ -169,7 +169,7 @@ class _ProcessOrdersState extends State<ProcessOrders> {
                                       ),
                                       Row(
                                         children: [
-                                          const  Icon(
+                                          const Icon(
                                               MaterialCommunityIcons
                                                   .truck_fast_outline,
                                               size: 16),
