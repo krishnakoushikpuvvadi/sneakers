@@ -169,7 +169,7 @@ class _ProcessOrdersState extends State<ProcessOrders> {
                                       ),
                                       Row(
                                         children: [
-                                          Icon(
+                                          const  Icon(
                                               MaterialCommunityIcons
                                                   .truck_fast_outline,
                                               size: 16),
